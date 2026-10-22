@@ -1,0 +1,14 @@
+[
+  {
+    "relation": ["delegate_permission/common.get_login_creds"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.sailigo.app",
+      "sha256_cert_fingerprints": ["56:7D:BE:59:E0:B8:13:9D:3B:D7:C1:64:85:C5:8E:C1:90:2A:AB:A0:63:71:EB:56:3E:6A:1D:F8:EC:1C:B5:39"]
+    }
+  },
+  {
+    "relation": ["delegate_permission/common.get_login_creds"],
+    "target": { "namespace": "web", "site": "https://sailigo.org" }
+  }
+]
