@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Sailigo — affiche A4</title>
+<link rel="icon" href="favicon.png">
+<style>
+  /* Affiche A4 : à ouvrir dans un navigateur, puis Ctrl + P.
+     Les marges sont gérées ici ; dans la fenêtre d'impression, choisis
+     « Graphiques d'arrière-plan » pour garder les aplats de couleur. */
+  @page { size: A4 portrait; margin: 0; }
+
+  :root {
+    --encre: #10263A;
+    --encre-douce: #5C7183;
+    --ambre: #E8A838;
+    --fond: #FAFAF7;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: #9aa7b1;                 /* visible à l'écran, jamais imprimé */
+    font-family: 'DM Sans', system-ui, sans-serif;
+    color: var(--encre);
+  }
+
+  .feuille {
+    width: 210mm;
+    height: 297mm;
+    margin: 12mm auto;
+    background: var(--fond);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,.25);
+  }
+
+  header {
+    background: var(--encre);
+    color: var(--fond);
+    padding: 12mm 16mm 10mm;
+  }
+  header img { width: 18mm; height: 18mm; border-radius: 5mm; display: block; margin-bottom: 5mm; }
+  h1 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: 20mm;
+    line-height: .95;
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+  .accroche {
+    font-size: 5mm;
+    line-height: 1.35;
+    margin: 4mm 0 0;
+    color: #C9D4DC;
+    max-width: 140mm;
+  }
+
+  .corps { flex: 1; padding: 10mm 16mm 8mm; display: flex; gap: 11mm; }
+  .colonne { flex: 1; }
+
+  h2 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 5.6mm;
+    margin: 0 0 3mm;
+  }
+  ul { margin: 0 0 7mm; padding-left: 5mm; }
+  li { font-size: 4.3mm; line-height: 1.45; margin-bottom: 2.5mm; }
+  li strong { font-weight: 600; }
+
+  .qr {
+    width: 62mm;
+    text-align: center;
+  }
+  .qr img { width: 58mm; height: 58mm; display: block; margin: 0 auto 4mm; }
+  .qr .scanne {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 5mm;
+    line-height: 1.2;
+  }
+  .qr .adresse {
+    font-size: 4mm;
+    color: var(--encre-douce);
+    margin-top: 2mm;
+    word-break: break-all;
+  }
+
+  .etapes { counter-reset: e; padding: 0; list-style: none; margin: 0; }
+  .etapes li {
+    counter-increment: e;
+    position: relative;
+    padding-left: 9mm;
+    margin-bottom: 3mm;
+  }
+  .etapes li::before {
+    content: counter(e);
+    position: absolute;
+    left: 0;
+    top: -0.5mm;
+    width: 6.5mm;
+    height: 6.5mm;
+    border-radius: 50%;
+    background: var(--ambre);
+    color: var(--encre);
+    font-weight: 700;
+    font-size: 3.8mm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  footer {
+    background: var(--encre);
+    color: #C9D4DC;
+    padding: 7mm 16mm;
+    font-size: 3.9mm;
+    display: flex;
+    justify-content: space-between;
+    gap: 6mm;
+  }
+  footer strong { color: var(--fond); }
+
+  @media print {
+    body { background: none; }
+    .feuille { margin: 0; box-shadow: none; }
+    .aide { display: none; }
+  }
+
+  .aide {
+    max-width: 210mm;
+    margin: 0 auto 12mm;
+    font-size: 14px;
+    color: #223;
+    background: #fff;
+    border-radius: 10px;
+    padding: 12px 16px;
+  }
+</style>
+</head>
+<body>
+
+<p class="aide">
+  Pour imprimer : Ctrl + P, format A4, marges « aucune », et coche
+  « Graphiques d'arrière-plan » pour conserver les aplats bleus. Ce
+  bandeau ne s'imprime pas.
+</p>
+
+<div class="feuille">
+
+  <header>
+    <img src="icon.png" alt="">
+    <h1>Sailigo</h1>
+    <p class="accroche">
+      Trouver un équipage, ou trouver un bateau. L'application qui met en
+      relation les capitaines et les équipier·es, près de chez toi.
+    </p>
+  </header>
+
+  <div class="corps">
+    <div class="colonne">
+      <h2>Pour qui ?</h2>
+      <ul>
+        <li><strong>Tu as un bateau</strong> et il te manque du monde à bord pour sortir ce week-end, convoyer, ou courir une régate.</li>
+        <li><strong>Tu veux naviguer</strong> mais tu n'as pas de bateau, et tu ne connais personne sur les pontons.</li>
+      </ul>
+
+      <h2>Comment ça marche</h2>
+      <ol class="etapes">
+        <li>Tu crées ton profil : ton expérience, tes postes, tes disponibilités.</li>
+        <li>Tu publies une sortie, ou tu postules à celles qui te plaisent.</li>
+        <li>Vous discutez dans l'application, puis vous embarquez.</li>
+      </ol>
+
+      <h2>Naviguer en confiance</h2>
+      <ul>
+        <li>Des avis réciproques après chaque sortie.</li>
+        <li>Signalement et blocage immédiats.</li>
+        <li>Aucun numéro de téléphone échangé.</li>
+        <li>Gratuit, sans commission.</li>
+      </ul>
+    </div>
+
+    <div class="qr">
+      <img src="qr-telecharger.png" alt="QR code vers sailigo.org">
+      <p class="scanne">Scanne pour<br>installer l'application</p>
+      <p class="adresse">sailigo.org/telecharger</p>
+    </div>
+  </div>
+
+  <footer>
+    <span><strong>sailigo.org</strong> · contact.sailigo@gmail.com</span>
+    <span>Version de test — tes retours décident de la suite</span>
+  </footer>
+
+</div>
+
+</body>
+</html>
