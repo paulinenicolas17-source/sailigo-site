@@ -5,10 +5,37 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Télécharger Sailigo</title>
 <link rel="icon" href="favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+  .discret { color: var(--encre-douce); font-size: .95rem; }
+</style>
+<script>
+  // Aiguillage selon le téléphone.
+  //
+  // Le QR code des affiches et des flyers mène ici. Plutôt que d'imprimer
+  // un code par magasin, la page envoie chacun vers celui de son
+  // téléphone. Sur ordinateur, elle s'affiche normalement.
+  //
+  // « replace » plutôt qu'un lien : le bouton Retour du téléphone ne
+  // ramène pas sur cette page, qui le renverrait aussitôt au magasin.
+  (function () {
+    var PLAY_STORE = 'https://play.google.com/store/apps/details?id=com.sailigo.app';
+    var APP_STORE = 'https://apps.apple.com/fr/app/id6826124470';
+
+    var ua = navigator.userAgent || '';
+    var android = /android/i.test(ua);
+    // Les iPad récents se présentent comme des Mac : on les reconnaît
+    // à leur écran tactile.
+    var ios = /iphone|ipad|ipod/i.test(ua)
+      || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+    if (android) {
+      window.location.replace(PLAY_STORE);
+    } else if (ios && APP_STORE) {
+      window.location.replace(APP_STORE);
+    }
+  })();
+</script>
 </head>
 <body>
 
@@ -19,49 +46,20 @@
 </div>
 
 <main>
-  <span class="etiquette">Version de test</span>
   <h1>Télécharger Sailigo</h1>
   <p class="chapeau">
-    L'application n'est pas encore publiée sur les magasins d'applications.
-    Elle s'installe directement, et tu recevras les versions suivantes de
-    la même façon.
+    Gratuite, sur Android et iPhone, sans commission ni option payante.
+    Trouve ton équipage, ou trouve ton embarquement, près de chez toi.
   </p>
 
   <div class="carte">
     <h2 style="margin-top:0">Android</h2>
-    <p>
-      <!-- Adresse stable : elle pointe toujours vers la dernière release
-           publiée sur GitHub. Rien à changer ici lors d'un nouveau build,
-           il suffit d'y publier le nouveau fichier sous le même nom. -->
-      <a class="bouton" href="https://github.com/paulinenicolas17-source/sailigo-site/releases/latest/download/sailigo.apk">
-        Télécharger Sailigo pour Android
-      </a>
-    </p>
-    <ol class="etapes">
-      <li>Touche le bouton ci-dessus depuis ton téléphone Android. Le
-          téléchargement démarre tout de suite.</li>
-      <li>Ton navigateur peut prévenir que ce type de fichier « peut être
-          dangereux » : c'est le message affiché pour toute application
-          installée hors magasin. Choisis de conserver le fichier.</li>
-      <li>Ouvre le fichier téléchargé. Android demandera l'autorisation
-          d'installer des applications depuis cette source : accepte, puis
-          reviens en arrière et relance l'installation.</li>
-      <li>Ouvre Sailigo et crée ton compte.</li>
-    </ol>
-    <p style="color:var(--encre-douce);font-size:.95rem;margin-bottom:0">
-      Ces avertissements sont normaux : ils s'affichent pour toute
-      application installée hors magasin. Ils disparaîtront quand Sailigo
-      sera publiée sur Google Play.
-    </p>
+    <a class="bouton" href="https://play.google.com/store/apps/details?id=com.sailigo.app">Télécharger sur Google Play</a>
   </div>
 
   <div class="carte">
     <h2 style="margin-top:0">iPhone</h2>
-    <p style="margin-bottom:0">
-      La version iPhone arrive. Écris-nous à
-      <a href="mailto:contact.sailigo@gmail.com?subject=Version%20iPhone%20de%20Sailigo">contact.sailigo@gmail.com</a>
-      pour être prévenu·e dès qu'elle est disponible.
-    </p>
+    <a class="bouton" href="https://apps.apple.com/fr/app/id6826124470">Télécharger dans l'App Store</a>
   </div>
 
   <p>
