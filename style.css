@@ -1,6 +1,9 @@
+/* Sailigo — feuille de style commune à toutes les pages du site.
+   Mêmes couleurs, mêmes polices et même vague que l'application. */
+
 /* Polices servies depuis ce site, et non depuis les serveurs de Google :
    aucune adresse IP de visiteur n'est transmise à un tiers pour les
-   afficher. Fichiers variables, allégés aux caractères du français. */
+   afficher. */
 @font-face {
   font-family: 'Bricolage Grotesque';
   src: url('polices/bricolage-grotesque.woff2') format('woff2');
@@ -23,9 +26,6 @@
   font-display: swap;
 }
 
-/* Sailigo — feuille de style commune aux cinq pages.
-   Mêmes couleurs et mêmes polices que l'application. */
-
 :root {
   --encre: #10263A;
   --encre-douce: #5C7183;
@@ -33,9 +33,14 @@
   --surface: #FFFFFF;
   --bordure: #DEE4E8;
   --ambre: #E8A838;
+  --nuit-claire: #1C3A54;
+  --largeur: 1040px;
 }
 
 * { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 body {
   margin: 0;
@@ -44,50 +49,51 @@ body {
   font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
   font-size: 17px;
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3 { font-family: 'Bricolage Grotesque', system-ui, sans-serif; line-height: 1.15; }
-h1 { font-size: 2.4rem; margin: 0 0 .6rem; }
-h2 { font-size: 1.4rem; margin: 2.4rem 0 .6rem; }
-h3 { font-size: 1.1rem; margin: 1.6rem 0 .4rem; }
+h1, h2, h3 { font-family: 'Bricolage Grotesque', system-ui, sans-serif; line-height: 1.12; font-weight: 700; }
+h2 { font-size: 1.55rem; margin: 2.6rem 0 .7rem; }
+h3 { font-size: 1.12rem; margin: 1.6rem 0 .4rem; }
 
-a { color: var(--encre); }
+a { color: var(--encre); text-underline-offset: 3px; }
+a:focus-visible, .bouton:focus-visible { outline: 3px solid var(--ambre); outline-offset: 3px; border-radius: 6px; }
 
-.bandeau {
-  background: var(--encre);
-  padding: 1rem 1.4rem;
+/* ---------- La barre du haut, sur toutes les pages ---------- */
+
+.barre {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(250, 250, 247, .94);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--bordure);
 }
-.bandeau .dedans {
-  max-width: 880px;
+.barre-dedans {
+  max-width: var(--largeur);
   margin: 0 auto;
+  padding: .7rem 1.4rem;
   display: flex;
   align-items: center;
-  gap: .8rem;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
-.bandeau img { width: 38px; height: 38px; border-radius: 10px; }
-.bandeau span {
-  font-family: 'Bricolage Grotesque', sans-serif;
-  font-weight: 700;
-  font-size: 1.3rem;
+.marque { display: flex; align-items: center; gap: .6rem; text-decoration: none; }
+.marque img { width: 36px; height: 36px; border-radius: 9px; }
+.marque span { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 1.3rem; }
+.menu { display: flex; align-items: center; gap: .3rem 1.4rem; flex-wrap: wrap; }
+.menu a { text-decoration: none; font-weight: 600; font-size: .98rem; }
+.menu a:hover { text-decoration: underline; }
+.menu .menu-action {
+  background: var(--encre);
   color: var(--surface);
+  padding: .5rem 1rem;
+  border-radius: 10px;
 }
-.bandeau a { color: var(--surface); text-decoration: none; display: flex; align-items: center; gap: .8rem; }
+.menu .menu-action:hover { text-decoration: none; background: var(--nuit-claire); }
 
-main { max-width: 880px; margin: 0 auto; padding: 2.4rem 1.4rem 4rem; }
-
-.chapeau { font-size: 1.15rem; color: var(--encre-douce); margin-bottom: 2rem; }
-
-.carte {
-  background: var(--surface);
-  border: 1px solid var(--bordure);
-  border-radius: 14px;
-  padding: 1.2rem 1.4rem;
-  margin: 1rem 0;
-}
-
-.atouts { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin: 2rem 0; }
-.atouts h3 { margin-top: 0; }
-.atouts p { margin: 0; color: var(--encre-douce); font-size: .97rem; }
+/* ---------- Les boutons ---------- */
 
 .bouton {
   display: inline-block;
@@ -95,33 +101,148 @@ main { max-width: 880px; margin: 0 auto; padding: 2.4rem 1.4rem 4rem; }
   color: var(--surface);
   text-decoration: none;
   font-weight: 600;
-  padding: .85rem 1.5rem;
+  padding: .85rem 1.4rem;
   border-radius: 12px;
-  margin: .4rem .6rem .4rem 0;
+  margin: .3rem .5rem .3rem 0;
 }
+.bouton:hover { background: var(--nuit-claire); }
 .bouton.clair { background: var(--surface); color: var(--encre); border: 1px solid var(--bordure); }
+.bouton.clair:hover { border-color: var(--encre); }
+.bouton.ambre { background: var(--ambre); color: var(--encre); }
+.bouton.ambre:hover { background: #F0B84F; }
 
-.etiquette {
-  display: inline-block;
-  background: var(--ambre);
-  color: var(--encre);
-  font-weight: 700;
-  font-size: .78rem;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  padding: .2rem .6rem;
-  border-radius: 5px;
+/* ---------- L'accueil ---------- */
+
+.ouverture { background: var(--encre); color: var(--surface); position: relative; }
+.ouverture-dedans {
+  max-width: var(--largeur);
+  margin: 0 auto;
+  padding: 4.2rem 1.4rem 5.4rem;
+}
+.ouverture h1 {
+  font-size: clamp(2.4rem, 5.6vw, 4rem);
+  line-height: 1.02;
+  letter-spacing: -.02em;
+  margin: 0 0 1.2rem;
+}
+.ouverture .accroche { font-size: 1.2rem; max-width: 34rem; color: #D5DEE6; margin: 0 0 2rem; }
+.ouverture .vague { position: absolute; left: 0; right: 0; bottom: 1.6rem; width: 100%; height: 34px; }
+.ouverture-dedans { display: grid; grid-template-columns: 1fr auto; gap: 2.4rem; align-items: center; }
+.ouverture h1 span { display: block; }
+.telephone {
+  position: relative;
+  z-index: 1;
+  width: 270px;
+  margin-bottom: -6rem;
+  border: 9px solid #0A1A28;
+  border-radius: 38px;
+  overflow: hidden;
+  background: #0A1A28;
+  box-shadow: 0 24px 50px rgba(10, 26, 40, .35);
+  transform: rotate(3deg);
+}
+.telephone img { display: block; width: 100%; height: auto; }
+
+.qr { display: flex; gap: 1rem; align-items: center; margin-top: 1.6rem; padding-top: 1.4rem; border-top: 1px solid var(--bordure); }
+.qr img { flex: none; border-radius: 8px; }
+.qr p { margin: 0; font-size: .95rem; }
+
+.portes {
+  max-width: var(--largeur);
+  margin: 0 auto;
+  padding: 4.6rem 1.4rem 1rem;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 1.4rem;
+}
+.porte { border-radius: 18px; padding: 1.6rem 1.7rem; }
+.porte h2 { margin: 0 0 .5rem; font-size: 1.45rem; }
+.porte p { margin: 0 0 1.1rem; color: var(--encre-douce); }
+.porte-principale { grid-row: span 2; background: var(--surface); border: 2px solid var(--encre); }
+.porte-principale p { font-size: 1.05rem; }
+.porte-secondaire { background: var(--surface); border: 1px solid var(--bordure); }
+.porte .lien-fort { font-weight: 700; }
+
+.arguments {
+  max-width: var(--largeur);
+  margin: 0 auto;
+  padding: 1rem 1.4rem 1rem;
+}
+.arguments ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: .4rem 3rem;
+}
+.arguments li { padding: 1rem 0; border-top: 3px solid var(--ambre); }
+.arguments h3 { margin: .6rem 0 .3rem; }
+.arguments p { margin: 0; color: var(--encre-douce); font-size: .98rem; }
+
+.rejoindre {
+  max-width: var(--largeur);
+  margin: 2.4rem auto 0;
+  padding: 0 1.4rem;
+}
+.rejoindre-dedans { background: var(--encre); color: var(--surface); border-radius: 22px; padding: 2.2rem 2rem; }
+.rejoindre h2 { margin: 0 0 .4rem; }
+.rejoindre p { margin: 0 0 1.2rem; color: #D5DEE6; }
+
+/* ---------- Les pages de texte : conditions, confidentialité… ---------- */
+
+main { max-width: 760px; margin: 0 auto; padding: 2.6rem 1.4rem 3rem; }
+main.accueil { max-width: none; padding: 0 0 3rem; }
+.document h1 { font-size: clamp(2rem, 5vw, 2.8rem); margin: 0 0 .4rem; }
+.document .maj { color: var(--encre-douce); margin: 0; }
+.document section { margin-top: .4rem; }
+.document p, .document li { color: #23384A; }
+.vague-titre { display: block; width: 180px; height: 22px; margin: 1rem 0 1.4rem; }
+
+/* La page de téléchargement */
+.chapeau { font-size: 1.15rem; color: var(--encre-douce); margin-bottom: 2rem; }
+.carte {
+  background: var(--surface);
+  border: 1px solid var(--bordure);
+  border-radius: 16px;
+  padding: 1.3rem 1.5rem;
+  margin: 1rem 0;
 }
 
-ol.etapes { padding-left: 1.2rem; }
+/* ---------- Le pied de page ---------- */
+
+.pied { border-top: 1px solid var(--bordure); color: var(--encre-douce); font-size: .93rem; }
+.pied-dedans {
+  max-width: var(--largeur);
+  margin: 0 auto;
+  padding: 1.8rem 1.4rem 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+}
+.pied nav { display: flex; flex-wrap: wrap; gap: .4rem 1.3rem; }
+.pied a { color: var(--encre-douce); }
+.pied p { margin: 0; }
+
+/* ---------- Sur téléphone ---------- */
+
+@media (max-width: 760px) {
+  .portes { grid-template-columns: 1fr; }
+  .porte-principale { grid-row: auto; }
+  .arguments ul { grid-template-columns: 1fr; }
+  .ouverture-dedans { padding: 3rem 1.4rem 4.6rem; grid-template-columns: 1fr; }
+  .telephone { display: none; }
+  .qr { display: none; }
+  .portes { padding-top: 2.4rem; }
+  .menu { gap: .3rem 1rem; }
+  /* Sur un téléphone, « Sur ordinateur » n'a pas de sens, et la barre
+     tient ainsi sur une ligne. */
+  .menu-ordinateur { display: none; }
+  .barre-dedans { flex-wrap: nowrap; padding: .6rem 1rem; }
+  .menu { flex-wrap: nowrap; white-space: nowrap; }
+}
+
+/* Les étapes numérotées de la suppression de compte : une vraie suite. */
+ol.etapes { padding-left: 1.3rem; }
 ol.etapes li { margin-bottom: .6rem; }
-
-footer {
-  border-top: 1px solid var(--bordure);
-  margin-top: 3rem;
-  padding: 1.6rem 1.4rem 3rem;
-  color: var(--encre-douce);
-  font-size: .92rem;
-}
-footer .dedans { max-width: 880px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; }
-footer a { color: var(--encre-douce); }

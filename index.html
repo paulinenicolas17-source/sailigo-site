@@ -4,56 +4,96 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sailigo — trouver un équipage ou un bateau</title>
-<meta name="description" content="Sailigo met en relation capitaines et équipier·es pour naviguer à la voile, près de chez toi.">
+<meta name="description" content="Sailigo met en relation capitaines et équipier·es pour naviguer à la voile, près de chez toi. Gratuit, sur Android, iPhone et ordinateur.">
 <link rel="icon" href="favicon.png">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<main>
+<header class="barre">
+  <div class="barre-dedans">
+    <a class="marque" href="index.html"><img src="icon.png" alt="" width="36" height="36"><span>Sailigo</span></a>
+    <nav class="menu" aria-label="Navigation principale">
+      <a href="https://app.sailigo.org/evenements-public">Événements</a>
+      <a class="menu-ordinateur" href="https://app.sailigo.org">Sur ordinateur</a>
+      <a class="menu-action" href="telecharger.html">Télécharger</a>
+    </nav>
+  </div>
+</header>
+
+<main class="accueil">
   <section class="ouverture">
-    <div class="ouverture-contenu">
-      <img class="logo" src="icon.png" alt="" width="112" height="112">
-      <h1>Sailigo</h1>
-      <p class="accroche">Des équipier·es, des capitaines, et des sorties en mer près de chez toi.</p>
-      <p class="statut">Gratuite, sur Android et iPhone.</p>
-      <p class="telechargement">
-        <a class="bouton" href="https://play.google.com/store/apps/details?id=com.sailigo.app">Télécharger sur Google Play</a>
-        <a class="bouton" href="https://apps.apple.com/fr/app/id6826124470">Télécharger dans l'App Store</a>
-      </p>
+    <div class="ouverture-dedans">
+      <div class="ouverture-texte">
+      <h1><span>Trouve ton équipage.</span> <span>Trouve ton embarquement.</span></h1>
+      <p class="accroche">Des capitaines qui cherchent du monde à bord, des équipier·es qui veulent naviguer, et les sorties en mer près de chez toi. Gratuit, sans commission.</p>
+      <a class="bouton ambre" href="telecharger.html">Télécharger l'application</a>
+      <a class="bouton clair" href="https://app.sailigo.org">Utiliser Sailigo sur ordinateur</a>
+      </div>
+      <div class="telephone" aria-hidden="true">
+        <img src="capture-sorties.webp" alt="" width="360" height="779">
+      </div>
     </div>
-    <svg class="vague vague-ouverture" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true">
-  <path d="M0 20 Q 75 0 150 20 T 300 20 T 450 20 T 600 20 T 750 20 T 900 20 T 1050 20 T 1200 20"
-        fill="none" stroke="#E8A838" stroke-width="7" stroke-linecap="round"/>
-</svg>
+    <svg class="vague" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 20 Q 75 0 150 20 T 300 20 T 450 20 T 600 20 T 750 20 T 900 20 T 1050 20 T 1200 20"
+            fill="none" stroke="#E8A838" stroke-width="7" stroke-linecap="round"/>
+    </svg>
   </section>
 
-  <section class="arguments">
+  <section class="portes" aria-label="Accéder à Sailigo">
+    <div class="porte porte-principale">
+      <h2>Sur ton téléphone</h2>
+      <p>L'application complète : publier une sortie, postuler, recevoir les réponses en notification, discuter avec l'équipage. Gratuite, sur Android et iPhone.</p>
+      <a class="bouton" href="https://play.google.com/store/apps/details?id=com.sailigo.app">Télécharger sur Google Play</a>
+      <a class="bouton" href="https://apps.apple.com/fr/app/id6826124470">Télécharger dans l'App Store</a>
+      <div class="qr">
+        <img src="qr-telecharger.png" alt="QR code de téléchargement de Sailigo" width="112" height="112">
+        <p>Tu lis cette page sur un ordinateur ? Scanne ce code avec l'appareil photo de ton téléphone : il t'envoie directement vers le bon magasin.</p>
+      </div>
+    </div>
+    <div class="porte porte-secondaire">
+      <h2>Sur ordinateur</h2>
+      <p>Les mêmes sorties, le même compte, depuis ton navigateur. Pratique pour préparer une régate ou s'inscrire depuis un bureau.</p>
+      <a class="lien-fort" href="https://app.sailigo.org">Ouvrir Sailigo dans le navigateur</a>
+    </div>
+    <div class="porte porte-secondaire">
+      <h2>Les événements nautiques</h2>
+      <p>Régates, salons et rassemblements à venir, avec le nombre de bateaux et d'équipier·es qui s'y cherchent. Sans compte.</p>
+      <a class="lien-fort" href="https://app.sailigo.org/evenements-public">Voir les événements</a>
+    </div>
+  </section>
+
+  <section class="arguments" aria-label="Pourquoi Sailigo">
     <ul>
-<li><h3>Équipier·e et capitaine, dans les deux sens</h3><p>Les capitaines publient leurs sorties, les équipier·es déclarent leurs disponibilités. Chacun peut aller vers l&#x27;autre.</p></li>
-<li><h3>Pensée pour naviguer en confiance</h3><p>Avis réciproques après chaque sortie, profils détaillés, signalement et blocage. Aucun numéro de téléphone échangé : tout passe par la messagerie.</p></li>
-<li><h3>Près de chez toi</h3><p>Cherche par port, par zone ou autour de ta position, avec le rayon que tu veux. La carte montre d&#x27;un coup d&#x27;œil les prochaines navigations.</p></li>
-<li><h3>Gratuit</h3><p>Publier une sortie, postuler, discuter : tout est gratuit. Pas d&#x27;abonnement, pas de commission sur les embarquements.</p></li>
+      <li><h3>Capitaine ou équipier·e, dans les deux sens</h3><p>Les capitaines publient leurs sorties, les équipier·es déclarent leurs disponibilités. Chacun peut aller vers l'autre.</p></li>
+      <li><h3>Pensée pour naviguer en confiance</h3><p>Avis réciproques après chaque sortie, profils détaillés, signalement et blocage. Aucun numéro de téléphone échangé : tout passe par la messagerie.</p></li>
+      <li><h3>Près de chez toi</h3><p>Cherche par port, par zone ou autour de ta position. La carte montre d'un coup d'œil les prochaines navigations et les événements.</p></li>
+      <li><h3>Gratuit, et ça le restera</h3><p>Publier une sortie, postuler, discuter : tout est gratuit. Pas d'abonnement, pas de commission sur les embarquements.</p></li>
     </ul>
   </section>
 
   <section class="rejoindre">
-    <h2>Prêt·e à embarquer ?</h2>
-    <p>Sailigo est gratuite, sans commission ni option payante.</p>
-    <p class="telechargement">
-        <a class="bouton" href="https://play.google.com/store/apps/details?id=com.sailigo.app">Télécharger sur Google Play</a>
-        <a class="bouton" href="https://apps.apple.com/fr/app/id6826124470">Télécharger dans l'App Store</a>
-      </p>
+    <div class="rejoindre-dedans">
+      <h2>Prêt·e à embarquer ?</h2>
+      <p>Crée ton compte en une minute, sur ton téléphone ou ton ordinateur.</p>
+      <a class="bouton ambre" href="telecharger.html">Télécharger l'application</a>
+      <a class="bouton clair" href="https://app.sailigo.org">Utiliser Sailigo sur ordinateur</a>
+    </div>
   </section>
 </main>
+
 <footer class="pied">
-  <nav aria-label="Informations légales">
-    <a href="conditions.html">Conditions d'utilisation</a>
-    <a href="confidentialite.html">Confidentialité</a>
-    <a href="suppression-compte.html">Supprimer mon compte</a>
-    <a href="mentions-legales.html">Mentions légales</a>
-  </nav>
-  <p>Contact : <a href="mailto:contact.sailigo@gmail.com">contact.sailigo@gmail.com</a></p>
+  <div class="pied-dedans">
+    <nav aria-label="Informations légales">
+      <a href="conditions.html">Conditions d'utilisation</a>
+      <a href="confidentialite.html">Confidentialité</a>
+      <a href="suppression-compte.html">Supprimer mon compte</a>
+      <a href="mentions-legales.html">Mentions légales</a>
+    </nav>
+    <p>Contact : <a href="mailto:contact.sailigo@gmail.com">contact.sailigo@gmail.com</a></p>
+    <p>© 2026 Sailigo</p>
+  </div>
 </footer>
+
 </body>
 </html>
