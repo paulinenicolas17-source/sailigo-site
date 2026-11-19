@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Delete your account — Sailigo</title>
+<meta name="description" content="How to delete your Sailigo account, and what is erased.">
+<link rel="icon" href="../favicon.png">
+<link rel="stylesheet" href="../style.css">
+<link rel="alternate" hreflang="fr" href="https://sailigo.org/suppression-compte.html">
+<link rel="alternate" hreflang="en" href="https://sailigo.org/en/delete-account.html">
+<link rel="alternate" hreflang="x-default" href="https://sailigo.org/">
+</head>
+<body>
+
+<header class="barre">
+  <div class="barre-dedans">
+    <a class="marque" href="./"><img src="../icon.png" alt="" width="36" height="36"><span>Sailigo</span></a>
+    <nav class="menu" aria-label="Main navigation">
+      <a href="https://app.sailigo.org/evenements-public">Events</a>
+      <a class="menu-ordinateur" href="https://app.sailigo.org">On a computer</a>
+      <a class="menu-langue" href="../suppression-compte.html" hreflang="fr" lang="fr" data-langue="fr" title="Version française">FR</a>
+      <a class="menu-action" href="download.html">Download</a>
+    </nav>
+  </div>
+</header>
+
+<main class="document">
+  <h1>Delete your Sailigo account</h1>
+  <p class="maj">Sailigo app, published by Pauline Nicolas.</p>
+  <svg class="vague vague-titre" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 20 Q 75 0 150 20 T 300 20 T 450 20 T 600 20 T 750 20 T 900 20 T 1050 20 T 1200 20"
+        fill="none" stroke="#E8A838" stroke-width="7" stroke-linecap="round"/>
+</svg>
+
+  <section>
+    <h2>From the app</h2>
+    <p>This is the quickest way, and the deletion is immediate.</p>
+    <ol class="etapes">
+      <li>Open the <strong>Profile</strong> tab.</li>
+      <li>At the very bottom, tap <strong>Delete my account</strong>.</li>
+      <li>Type the confirmation word shown on screen, then confirm.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Without the app</h2>
+    <p>If you have already uninstalled it, write to us from your account's email address. We delete the account within 30 days and confirm the deletion by return email.</p>
+    <a class="bouton" href="mailto:contact.sailigo@gmail.com?subject=Deletion%20of%20my%20Sailigo%20account">Request deletion by email</a>
+  </section>
+
+  <section>
+    <h2>Delete only some of your data</h2>
+
+  <p>
+    You do not have to delete your account to erase something.
+    In the app, the following items can be deleted one by one,
+    and disappear immediately:
+  </p>
+
+  <div class="carte">
+    <ul>
+      <li><strong>A photo</strong> — Profile tab, tap the photo, then “Delete”.</li>
+      <li><strong>A trip in your sailing CV</strong> — Profile tab, “My sailing CV”, then “Delete” on the trip concerned. Only the trips you entered yourself can be removed: those made through the app also belong to the skipper who confirmed them.</li>
+      <li><strong>A qualification</strong> — same screen, “Remove” button.</li>
+      <li><strong>A trip you posted</strong> — open it, then “Cancel the trip”. If nobody has signed up, it is deleted; otherwise it is cancelled and your crew is notified.</li>
+      <li><strong>An availability</strong> — Crew tab, then “Remove”.</li>
+      <li><strong>Your whole sailing CV</strong> — you can make it private rather than delete it: it then stays visible only to the people you are in contact with.</li>
+    </ul>
+  </div>
+
+  <p>
+    For any other partial deletion request, write to us at
+    <a href="mailto:contact.sailigo@gmail.com?subject=Data%20deletion">contact.sailigo@gmail.com</a>.
+    We reply within 30 days.
+  </p>
+
+  <h2>What is deleted</h2>
+    <p>Your account, your profile and photos, the trips you posted, your applications and availability, your messages, your sailing CV and qualifications, the reviews you wrote and those about you, the people you follow and those you blocked.</p>
+  </section>
+
+  <section>
+    <h2>What is kept</h2>
+    <p>The reports and suggestions you sent remain, with no link to your identity, for the safety of other users. No other data is kept after deletion.</p>
+  </section>
+</main>
+
+<footer class="pied">
+  <div class="pied-dedans">
+    <nav aria-label="Legal information">
+      <a href="terms.html">Terms of use</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="delete-account.html">Delete my account</a>
+      <a href="legal-notice.html">Legal notice</a>
+    </nav>
+    <p>Contact : <a href="mailto:contact.sailigo@gmail.com">contact.sailigo@gmail.com</a></p>
+    <p>© 2026 Sailigo</p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('[data-langue]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      try { localStorage.setItem('langue-site', a.getAttribute('data-langue')); } catch (e) {}
+    });
+  });
+</script>
+</body>
+</html>

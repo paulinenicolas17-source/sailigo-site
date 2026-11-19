@@ -7,14 +7,18 @@
 <meta name="description" content="Politique de confidentialité de l&#x27;application Sailigo.">
 <link rel="icon" href="favicon.png">
 <link rel="stylesheet" href="style.css">
+<link rel="alternate" hreflang="fr" href="https://sailigo.org/confidentialite.html">
+<link rel="alternate" hreflang="en" href="https://sailigo.org/en/privacy.html">
+<link rel="alternate" hreflang="x-default" href="https://sailigo.org/">
 </head>
 <body>
 <header class="barre">
   <div class="barre-dedans">
-    <a class="marque" href="index.html"><img src="icon.png" alt="" width="36" height="36"><span>Sailigo</span></a>
+    <a class="marque" href="fr/"><img src="icon.png" alt="" width="36" height="36"><span>Sailigo</span></a>
     <nav class="menu" aria-label="Navigation principale">
       <a href="https://app.sailigo.org/evenements-public">Événements</a>
       <a class="menu-ordinateur" href="https://app.sailigo.org">Sur ordinateur</a>
+      <a class="menu-langue" href="en/privacy.html" hreflang="en" lang="en" data-langue="en" title="English version">EN</a>
       <a class="menu-action" href="telecharger.html">Télécharger</a>
     </nav>
   </div>
@@ -22,7 +26,7 @@
 
 <main class="document">
   <h1>Politique de confidentialité</h1>
-  <p class="maj">Dernière mise à jour : octobre 2026</p>
+  <p class="maj">Dernière mise à jour : novembre 2026</p>
   <svg class="vague vague-titre" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true">
   <path d="M0 20 Q 75 0 150 20 T 300 20 T 450 20 T 600 20 T 750 20 T 900 20 T 1050 20 T 1200 20"
         fill="none" stroke="#E8A838" stroke-width="7" stroke-linecap="round"/>
@@ -65,7 +69,7 @@
 <p>Tu peux également saisir la CNIL si tu estimes que tes droits ne sont pas respectés.</p></section>
 <section><h2>Traceurs</h2>
 <p>L'application n'utilise aucun traceur publicitaire et ne mesure pas ton audience à des fins commerciales. Le site sailigo.org ne dépose aucun cookie.</p>
-<p>Dernière mise à jour : octobre 2026.</p></section>
+<p>Dernière mise à jour : novembre 2026.</p></section>
 </main>
 <footer class="pied">
   <div class="pied-dedans">
@@ -79,5 +83,12 @@
     <p>© 2026 Sailigo</p>
   </div>
 </footer>
+<script>
+  document.querySelectorAll('[data-langue]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      try { localStorage.setItem('langue-site', a.getAttribute('data-langue')); } catch (e) {}
+    });
+  });
+</script>
 </body>
 </html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Legal notice — Sailigo</title>
+<meta name="description" content="Legal notice of the Sailigo website and app.">
+<link rel="icon" href="../favicon.png">
+<link rel="stylesheet" href="../style.css">
+<link rel="alternate" hreflang="fr" href="https://sailigo.org/mentions-legales.html">
+<link rel="alternate" hreflang="en" href="https://sailigo.org/en/legal-notice.html">
+<link rel="alternate" hreflang="x-default" href="https://sailigo.org/">
+</head>
+<body>
+
+<header class="barre">
+  <div class="barre-dedans">
+    <a class="marque" href="./"><img src="../icon.png" alt="" width="36" height="36"><span>Sailigo</span></a>
+    <nav class="menu" aria-label="Main navigation">
+      <a href="https://app.sailigo.org/evenements-public">Events</a>
+      <a class="menu-ordinateur" href="https://app.sailigo.org">On a computer</a>
+      <a class="menu-langue" href="../mentions-legales.html" hreflang="fr" lang="fr" data-langue="fr" title="Version française">FR</a>
+      <a class="menu-action" href="download.html">Download</a>
+    </nav>
+  </div>
+</header>
+
+<main class="document">
+  <h1>Legal notice</h1>
+  <svg class="vague vague-titre" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 20 Q 75 0 150 20 T 300 20 T 450 20 T 600 20 T 750 20 T 900 20 T 1050 20 T 1200 20"
+        fill="none" stroke="#E8A838" stroke-width="7" stroke-linecap="round"/>
+</svg>
+  <section>
+    <h2>Publisher</h2>
+    <p>The sailigo.org website and the Sailigo app are published on a non-professional basis by Pauline Nicolas.</p>
+    <p>Contact: <a href="mailto:contact.sailigo@gmail.com">contact.sailigo@gmail.com</a></p>
+  </section>
+  <section>
+    <h2>Website hosting</h2>
+    <p>GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, United States.</p>
+  </section>
+  <section>
+    <h2>App data hosting</h2>
+    <p>Supabase, Inc., San Francisco, California, United States — <a href="https://supabase.com">supabase.com</a>. The servers used are located in the region chosen for the project.</p>
+  </section>
+</main>
+
+<footer class="pied">
+  <div class="pied-dedans">
+    <nav aria-label="Legal information">
+      <a href="terms.html">Terms of use</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="delete-account.html">Delete my account</a>
+      <a href="legal-notice.html">Legal notice</a>
+    </nav>
+    <p>Contact : <a href="mailto:contact.sailigo@gmail.com">contact.sailigo@gmail.com</a></p>
+    <p>© 2026 Sailigo</p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('[data-langue]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      try { localStorage.setItem('langue-site', a.getAttribute('data-langue')); } catch (e) {}
+    });
+  });
+</script>
+</body>
+</html>

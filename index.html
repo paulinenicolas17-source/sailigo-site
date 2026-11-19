@@ -3,97 +3,65 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sailigo — trouver un équipage ou un bateau</title>
-<meta name="description" content="Sailigo met en relation capitaines et équipier·es pour naviguer à la voile, près de chez toi. Gratuit, sur Android, iPhone et ordinateur.">
+<title>Sailigo — Choisis ta langue · Choose your language</title>
+<meta name="description" content="Sailigo met en relation capitaines et équipier·es pour naviguer près de chez toi. Sailigo connects skippers and crew members to go sailing near you.">
 <link rel="icon" href="favicon.png">
 <link rel="stylesheet" href="style.css">
+<link rel="alternate" hreflang="fr" href="https://sailigo.org/fr/">
+<link rel="alternate" hreflang="en" href="https://sailigo.org/en/">
+<link rel="alternate" hreflang="x-default" href="https://sailigo.org/">
+<script>
+  // Déjà venu·e et déjà choisi : on va directement à la bonne langue.
+  // « replace » : le bouton Retour ne ramène pas sur ce choix.
+  (function () {
+    var langue = null;
+    try { langue = localStorage.getItem('langue-site'); } catch (e) {}
+    if (langue === 'fr' || langue === 'en') window.location.replace(langue + '/');
+  })();
+</script>
 </head>
-<body>
+<body class="entree">
 
-<header class="barre">
-  <div class="barre-dedans">
-    <a class="marque" href="index.html"><img src="icon.png" alt="" width="36" height="36"><span>Sailigo</span></a>
-    <nav class="menu" aria-label="Navigation principale">
-      <a href="https://app.sailigo.org/evenements-public">Événements</a>
-      <a class="menu-ordinateur" href="https://app.sailigo.org">Sur ordinateur</a>
-      <a class="menu-action" href="telecharger.html">Télécharger</a>
-    </nav>
+<main class="entree-dedans">
+  <div class="entree-haut">
+    <img class="entree-bateau" src="bateau.png" alt="" width="160" height="160">
+    <h1>Sailigo</h1>
+    <span class="entree-trait" aria-hidden="true"></span>
+    <p class="entree-accroche"><span>Trouve ton équipage.</span> <span>Trouve ton embarquement.</span></p>
+    <p class="entree-accroche-en" lang="en">Find your crew. Find your boat.</p>
   </div>
-</header>
 
-<main class="accueil">
-  <section class="ouverture">
-    <div class="ouverture-dedans">
-      <div class="ouverture-texte">
-      <h1><span>Trouve ton équipage.</span> <span>Trouve ton embarquement.</span></h1>
-      <p class="accroche">Des capitaines qui cherchent du monde à bord, des équipier·es qui veulent naviguer, et les sorties en mer près de chez toi. Gratuit, sans commission.</p>
-      <a class="bouton ambre" href="telecharger.html">Télécharger l'application</a>
-      <a class="bouton clair" href="https://app.sailigo.org">Utiliser Sailigo sur ordinateur</a>
-      </div>
-      <div class="telephone" aria-hidden="true">
-        <img src="capture-sorties.webp" alt="" width="360" height="779">
-      </div>
-    </div>
-    <svg class="vague" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true">
-      <path d="M0 20 Q 75 0 150 20 T 300 20 T 450 20 T 600 20 T 750 20 T 900 20 T 1050 20 T 1200 20"
-            fill="none" stroke="#E8A838" stroke-width="7" stroke-linecap="round"/>
-    </svg>
-  </section>
-
-  <section class="portes" aria-label="Accéder à Sailigo">
-    <div class="porte porte-principale">
-      <h2>Sur ton téléphone</h2>
-      <p>L'application complète : publier une sortie, postuler, recevoir les réponses en notification, discuter avec l'équipage. Gratuite, sur Android et iPhone.</p>
-      <a class="bouton" href="https://play.google.com/store/apps/details?id=com.sailigo.app">Télécharger sur Google Play</a>
-      <a class="bouton" href="https://apps.apple.com/fr/app/id6826124470">Télécharger dans l'App Store</a>
-      <div class="qr">
-        <img src="qr-telecharger.png" alt="QR code de téléchargement de Sailigo" width="112" height="112">
-        <p>Tu lis cette page sur un ordinateur ? Scanne ce code avec l'appareil photo de ton téléphone : il t'envoie directement vers le bon magasin.</p>
-      </div>
-    </div>
-    <div class="porte porte-secondaire">
-      <h2>Sur ordinateur</h2>
-      <p>Les mêmes sorties, le même compte, depuis ton navigateur. Pratique pour préparer une régate ou s'inscrire depuis un bureau.</p>
-      <a class="lien-fort" href="https://app.sailigo.org">Ouvrir Sailigo dans le navigateur</a>
-    </div>
-    <div class="porte porte-secondaire">
-      <h2>Les événements nautiques</h2>
-      <p>Régates, salons et rassemblements à venir, avec le nombre de bateaux et d'équipier·es qui s'y cherchent. Sans compte.</p>
-      <a class="lien-fort" href="https://app.sailigo.org/evenements-public">Voir les événements</a>
-    </div>
-  </section>
-
-  <section class="arguments" aria-label="Pourquoi Sailigo">
-    <ul>
-      <li><h3>Capitaine ou équipier·e, dans les deux sens</h3><p>Les capitaines publient leurs sorties, les équipier·es déclarent leurs disponibilités. Chacun peut aller vers l'autre.</p></li>
-      <li><h3>Pensée pour naviguer en confiance</h3><p>Avis réciproques après chaque sortie, profils détaillés, signalement et blocage. Aucun numéro de téléphone échangé : tout passe par la messagerie.</p></li>
-      <li><h3>Près de chez toi</h3><p>Cherche par port, par zone ou autour de ta position. La carte montre d'un coup d'œil les prochaines navigations et les événements.</p></li>
-      <li><h3>Gratuit, et ça le restera</h3><p>Publier une sortie, postuler, discuter : tout est gratuit. Pas d'abonnement, pas de commission sur les embarquements.</p></li>
-    </ul>
-  </section>
-
-  <section class="rejoindre">
-    <div class="rejoindre-dedans">
-      <h2>Prêt·e à embarquer ?</h2>
-      <p>Crée ton compte en une minute, sur ton téléphone ou ton ordinateur.</p>
-      <a class="bouton ambre" href="telecharger.html">Télécharger l'application</a>
-      <a class="bouton clair" href="https://app.sailigo.org">Utiliser Sailigo sur ordinateur</a>
-    </div>
-  </section>
+  <div class="entree-bas">
+    <p class="entree-consigne">Choisis ta langue · <span lang="en">Choose your language</span></p>
+    <a class="entree-choix" href="fr/" data-langue="fr" hreflang="fr">
+      <span class="entree-code">FR</span>
+      <span class="entree-libelle"><strong>Français</strong><span>Continuer en français</span></span>
+      <span class="entree-fleche" aria-hidden="true">→</span>
+    </a>
+    <a class="entree-choix" href="en/" data-langue="en" hreflang="en" lang="en">
+      <span class="entree-code">EN</span>
+      <span class="entree-libelle"><strong>English</strong><span>Continue in English</span></span>
+      <span class="entree-fleche" aria-hidden="true">→</span>
+    </a>
+  </div>
 </main>
 
-<footer class="pied">
-  <div class="pied-dedans">
-    <nav aria-label="Informations légales">
-      <a href="conditions.html">Conditions d'utilisation</a>
-      <a href="confidentialite.html">Confidentialité</a>
-      <a href="suppression-compte.html">Supprimer mon compte</a>
-      <a href="mentions-legales.html">Mentions légales</a>
-    </nav>
-    <p>Contact : <a href="mailto:contact.sailigo@gmail.com">contact.sailigo@gmail.com</a></p>
-    <p>© 2026 Sailigo</p>
-  </div>
-</footer>
-
+<script>
+  // La langue du navigateur en premier, mise en avant.
+  (function () {
+    var anglais = !/^fr/i.test(navigator.language || 'fr');
+    var choix = document.querySelectorAll('.entree-choix');
+    var premier = anglais ? choix[1] : choix[0];
+    premier.classList.add('entree-principal');
+    premier.parentNode.insertBefore(premier, premier.parentNode.querySelector('.entree-choix'));
+  })();
+</script>
+<script>
+  document.querySelectorAll('[data-langue]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      try { localStorage.setItem('langue-site', a.getAttribute('data-langue')); } catch (e) {}
+    });
+  });
+</script>
 </body>
 </html>

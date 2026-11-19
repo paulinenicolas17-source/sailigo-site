@@ -246,3 +246,90 @@ main.accueil { max-width: none; padding: 0 0 3rem; }
 /* Les étapes numérotées de la suppression de compte : une vraie suite. */
 ol.etapes { padding-left: 1.3rem; }
 ol.etapes li { margin-bottom: .6rem; }
+
+/* ---------- Le sélecteur de langue, dans la barre du haut ---------- */
+
+.menu .menu-langue {
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  border: 1px solid var(--bordure);
+  border-radius: 999px;
+  padding: .2rem .6rem;
+  color: var(--encre-douce);
+}
+.menu .menu-langue:hover { border-color: var(--encre); color: var(--encre); text-decoration: none; }
+
+/* ---------- La page d'entrée : le choix de la langue ---------- */
+
+body.entree { background: var(--encre); color: var(--surface); min-height: 100vh; min-height: 100dvh; }
+main.entree-dedans {
+  max-width: 460px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0 auto;
+  padding: 3rem 1.4rem 2.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.6rem;
+}
+.entree-haut { text-align: center; animation: monter .7s ease-out both; }
+.entree-bateau { width: 150px; height: 150px; display: block; margin: 0 auto .4rem; }
+.entree-haut h1 { font-size: 3rem; letter-spacing: -.03em; margin: 0; color: var(--surface); }
+.entree-trait { display: block; width: 36px; height: 3px; border-radius: 2px; background: var(--ambre); margin: 1rem auto 1.4rem; }
+.entree-accroche { font-size: 1.2rem; font-weight: 500; margin: 0; }
+.entree-accroche-en { font-style: italic; color: rgba(255, 255, 255, .6); margin: .4rem 0 0; }
+.entree-bas { display: flex; flex-direction: column; gap: .8rem; animation: monter .7s .12s ease-out both; }
+.entree-consigne {
+  text-align: center;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ambre);
+  margin: 0 0 .2rem;
+}
+.entree-choix {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.2rem;
+  border-radius: 16px;
+  text-decoration: none;
+  color: var(--surface);
+  background: rgba(255, 255, 255, .06);
+  border: 1.5px solid rgba(255, 255, 255, .35);
+  transition: transform .15s ease, background .15s ease;
+}
+.entree-choix:hover { transform: translateY(-2px); background: rgba(255, 255, 255, .12); }
+.entree-choix:focus-visible { outline: 3px solid var(--ambre); outline-offset: 3px; }
+.entree-choix.entree-principal { background: var(--surface); border-color: var(--surface); color: var(--encre); }
+.entree-choix.entree-principal:hover { background: #F2F5F7; }
+.entree-code {
+  flex: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: .85rem;
+  letter-spacing: .04em;
+  border: 1.5px solid currentColor;
+  opacity: .9;
+}
+.entree-libelle { flex: 1; display: flex; flex-direction: column; line-height: 1.3; }
+.entree-libelle strong { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.2rem; }
+.entree-libelle span { font-size: .92rem; opacity: .7; }
+.entree-fleche { font-size: 1.3rem; }
+@keyframes monter { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .entree-haut, .entree-bas { animation: none; } }
+
+/* Sur un petit téléphone, avec le sélecteur de langue, la barre ne
+   tiendrait plus : le logo seul suffit à reconnaître Sailigo. */
+@media (max-width: 480px) {
+  .marque span { display: none; }
+  .menu { gap: .3rem .8rem; }
+}
+.entree-accroche span { display: block; }

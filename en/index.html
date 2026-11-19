@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sailigo — find a crew or a boat</title>
+<meta name="description" content="Sailigo connects skippers and crew members to go sailing near you. Free, on Android, iPhone and computer.">
+<link rel="icon" href="../favicon.png">
+<link rel="stylesheet" href="../style.css">
+<link rel="alternate" hreflang="fr" href="https://sailigo.org/fr/">
+<link rel="alternate" hreflang="en" href="https://sailigo.org/en/">
+<link rel="alternate" hreflang="x-default" href="https://sailigo.org/">
+</head>
+<body>
+
+<header class="barre">
+  <div class="barre-dedans">
+    <a class="marque" href="./"><img src="../icon.png" alt="" width="36" height="36"><span>Sailigo</span></a>
+    <nav class="menu" aria-label="Main navigation">
+      <a href="https://app.sailigo.org/evenements-public">Events</a>
+      <a class="menu-ordinateur" href="https://app.sailigo.org">On a computer</a>
+      <a class="menu-langue" href="../fr/" hreflang="fr" lang="fr" data-langue="fr" title="Version française">FR</a>
+      <a class="menu-action" href="download.html">Download</a>
+    </nav>
+  </div>
+</header>
+
+<main class="accueil">
+  <section class="ouverture">
+    <div class="ouverture-dedans">
+      <div class="ouverture-texte">
+      <h1><span>Find your crew.</span> <span>Find your boat.</span></h1>
+      <p class="accroche">Skippers looking for people on board, crew members who want to sail, and sailing trips near you. Free, with no commission.</p>
+      <a class="bouton ambre" href="download.html">Download the app</a>
+      <a class="bouton clair" href="https://app.sailigo.org">Use Sailigo on a computer</a>
+      </div>
+      <div class="telephone" aria-hidden="true">
+        <img src="../capture-sorties.webp" alt="" width="360" height="779">
+      </div>
+    </div>
+    <svg class="vague" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 20 Q 75 0 150 20 T 300 20 T 450 20 T 600 20 T 750 20 T 900 20 T 1050 20 T 1200 20"
+            fill="none" stroke="#E8A838" stroke-width="7" stroke-linecap="round"/>
+    </svg>
+  </section>
+
+  <section class="portes" aria-label="Get Sailigo">
+    <div class="porte porte-principale">
+      <h2>On your phone</h2>
+      <p>The full app: post a trip, apply, get replies as notifications, chat with the crew. Free, on Android and iPhone.</p>
+      <a class="bouton" href="https://play.google.com/store/apps/details?id=com.sailigo.app">Get it on Google Play</a>
+      <a class="bouton" href="https://apps.apple.com/app/id6826124470">Download on the App Store</a>
+      <div class="qr">
+        <img src="../qr-telecharger.png" alt="QR code to download Sailigo" width="112" height="112">
+        <p>Reading this on a computer? Scan this code with your phone's camera: it takes you straight to the right store.</p>
+      </div>
+    </div>
+    <div class="porte porte-secondaire">
+      <h2>On a computer</h2>
+      <p>The same trips, the same account, in your browser. Handy to prepare a regatta or sign up from your desk.</p>
+      <a class="lien-fort" href="https://app.sailigo.org">Open Sailigo in your browser</a>
+    </div>
+    <div class="porte porte-secondaire">
+      <h2>Sailing events</h2>
+      <p>Upcoming regattas, boat shows and gatherings, with the number of boats and crew members looking for each other. No account needed.</p>
+      <a class="lien-fort" href="https://app.sailigo.org/evenements-public">See the events</a>
+    </div>
+  </section>
+
+  <section class="arguments" aria-label="Why Sailigo">
+    <ul>
+      <li><h3>Skipper or crew, both ways</h3><p>Skippers post their trips, crew members share their availability. Anyone can reach out to the other.</p></li>
+      <li><h3>Built to sail with confidence</h3><p>Mutual reviews after every trip, detailed profiles, reporting and blocking. No phone numbers exchanged: everything goes through the in-app chat.</p></li>
+      <li><h3>Near you</h3><p>Search by harbour, by area or around your location. The map shows upcoming trips and events at a glance.</p></li>
+      <li><h3>Free, and it will stay that way</h3><p>Posting a trip, applying, chatting: everything is free. No subscription, no commission on any berth.</p></li>
+    </ul>
+  </section>
+
+  <section class="rejoindre">
+    <div class="rejoindre-dedans">
+      <h2>Ready to come aboard?</h2>
+      <p>Create your account in a minute, on your phone or your computer.</p>
+      <a class="bouton ambre" href="download.html">Download the app</a>
+      <a class="bouton clair" href="https://app.sailigo.org">Use Sailigo on a computer</a>
+    </div>
+  </section>
+</main>
+
+<footer class="pied">
+  <div class="pied-dedans">
+    <nav aria-label="Legal information">
+      <a href="terms.html">Terms of use</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="delete-account.html">Delete my account</a>
+      <a href="legal-notice.html">Legal notice</a>
+    </nav>
+    <p>Contact : <a href="mailto:contact.sailigo@gmail.com">contact.sailigo@gmail.com</a></p>
+    <p>© 2026 Sailigo</p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('[data-langue]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      try { localStorage.setItem('langue-site', a.getAttribute('data-langue')); } catch (e) {}
+    });
+  });
+</script>
+</body>
+</html>

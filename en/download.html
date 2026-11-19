@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Download Sailigo</title>
+<meta name="description" content="Download Sailigo for free, on Android and iPhone.">
+<link rel="icon" href="../favicon.png">
+<link rel="stylesheet" href="../style.css">
+<link rel="alternate" hreflang="fr" href="https://sailigo.org/telecharger.html">
+<link rel="alternate" hreflang="en" href="https://sailigo.org/en/download.html">
+<link rel="alternate" hreflang="x-default" href="https://sailigo.org/">
+<style>
+  .discret { color: var(--encre-douce); font-size: .95rem; }
+</style>
+<script>
+  // Phones go straight to their own store; computers see the page.
+  (function () {
+    var ua = navigator.userAgent || '';
+    var android = /android/i.test(ua);
+    var ios = /iphone|ipad|ipod/i.test(ua)
+      || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    if (android) window.location.replace('https://play.google.com/store/apps/details?id=com.sailigo.app');
+    else if (ios) window.location.replace('https://apps.apple.com/app/id6826124470');
+  })();
+</script>
+</head>
+<body>
+
+<header class="barre">
+  <div class="barre-dedans">
+    <a class="marque" href="./"><img src="../icon.png" alt="" width="36" height="36"><span>Sailigo</span></a>
+    <nav class="menu" aria-label="Main navigation">
+      <a href="https://app.sailigo.org/evenements-public">Events</a>
+      <a class="menu-ordinateur" href="https://app.sailigo.org">On a computer</a>
+      <a class="menu-langue" href="../telecharger.html" hreflang="fr" lang="fr" data-langue="fr" title="Version française">FR</a>
+      <a class="menu-action" href="download.html">Download</a>
+    </nav>
+  </div>
+</header>
+
+<main class="document">
+  <h1>Download Sailigo</h1>
+  <p class="chapeau">
+    Free, on Android and iPhone, with no commission and no paid option.
+    Find your crew, or find your boat, near you.
+  </p>
+
+  <div class="carte">
+    <h2 style="margin-top:0">Android</h2>
+    <a class="bouton" href="https://play.google.com/store/apps/details?id=com.sailigo.app">Get it on Google Play</a>
+  </div>
+
+  <div class="carte">
+    <h2 style="margin-top:0">iPhone</h2>
+    <a class="bouton" href="https://apps.apple.com/app/id6826124470">Download on the App Store</a>
+  </div>
+
+  <p>
+    Any trouble installing it? Write to us, we reply quickly:
+    <a href="mailto:contact.sailigo@gmail.com">contact.sailigo@gmail.com</a>.
+  </p>
+</main>
+
+<footer class="pied">
+  <div class="pied-dedans">
+    <nav aria-label="Legal information">
+      <a href="terms.html">Terms of use</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="delete-account.html">Delete my account</a>
+      <a href="legal-notice.html">Legal notice</a>
+    </nav>
+    <p>Contact : <a href="mailto:contact.sailigo@gmail.com">contact.sailigo@gmail.com</a></p>
+    <p>© 2026 Sailigo</p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('[data-langue]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      try { localStorage.setItem('langue-site', a.getAttribute('data-langue')); } catch (e) {}
+    });
+  });
+</script>
+</body>
+</html>

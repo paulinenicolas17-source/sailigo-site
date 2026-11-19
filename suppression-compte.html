@@ -7,14 +7,18 @@
 <meta name="description" content="Comment supprimer ton compte Sailigo, et ce qui est effacé.">
 <link rel="icon" href="favicon.png">
 <link rel="stylesheet" href="style.css">
+<link rel="alternate" hreflang="fr" href="https://sailigo.org/suppression-compte.html">
+<link rel="alternate" hreflang="en" href="https://sailigo.org/en/delete-account.html">
+<link rel="alternate" hreflang="x-default" href="https://sailigo.org/">
 </head>
 <body>
 <header class="barre">
   <div class="barre-dedans">
-    <a class="marque" href="index.html"><img src="icon.png" alt="" width="36" height="36"><span>Sailigo</span></a>
+    <a class="marque" href="fr/"><img src="icon.png" alt="" width="36" height="36"><span>Sailigo</span></a>
     <nav class="menu" aria-label="Navigation principale">
       <a href="https://app.sailigo.org/evenements-public">Événements</a>
       <a class="menu-ordinateur" href="https://app.sailigo.org">Sur ordinateur</a>
+      <a class="menu-langue" href="en/delete-account.html" hreflang="en" lang="en" data-langue="en" title="English version">EN</a>
       <a class="menu-action" href="telecharger.html">Télécharger</a>
     </nav>
   </div>
@@ -91,5 +95,12 @@
     <p>© 2026 Sailigo</p>
   </div>
 </footer>
+<script>
+  document.querySelectorAll('[data-langue]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      try { localStorage.setItem('langue-site', a.getAttribute('data-langue')); } catch (e) {}
+    });
+  });
+</script>
 </body>
 </html>
